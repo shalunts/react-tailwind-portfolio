@@ -1,12 +1,10 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { useState } from 'react';
-import { Disclosure, Menu } from '@headlessui/react';
+import { Fragment, useState } from 'react';
+import { Disclosure, Menu, Transition } from '@headlessui/react';
 import {
-  BellIcon,
   MenuIcon,
   XIcon,
   CodeIcon,
-  CogIcon,
   BookOpenIcon,
   MailIcon,
 } from '@heroicons/react/outline';
@@ -105,12 +103,11 @@ export default function Navbar() {
                   👋
                 </span>
 
-                {/* Profile dropdown */}
                 <Menu as='div' className='ml-3 relative'>
                   <div>
                     <Menu.Button
                       onClick={toggleWaving}
-                      className='bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'
+                      className='bg-gray-800 flex text-sm rounded-full outline-none ring-2 ring-offset-2 ring-offset-gray-800  hover:ring-white '
                     >
                       <span className='sr-only'>Open user menu</span>
                       <img
@@ -125,6 +122,7 @@ export default function Navbar() {
             </div>
           </div>
 
+          {/* For Mbile  */}
           <Disclosure.Panel className='sm:hidden'>
             <div className='px-2 pt-2 pb-3 space-y-1'>
               {navigation.map((item) => {
@@ -139,10 +137,12 @@ export default function Navbar() {
                       isActiveRoute
                         ? 'bg-gray-900 text-white'
                         : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'block px-3 py-2 rounded-md text-base font-medium'
+                      'px-3 py-2 rounded-md text-base font-medium flex flex-row items-center gap-2'
                     )}
                     aria-current={isActiveRoute ? 'page' : undefined}
                   >
+                    <div style={{ width: '1rem' }}>{item.icon}</div>
+
                     {item.name}
                   </Disclosure.Button>
                 );
