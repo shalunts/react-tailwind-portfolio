@@ -1,15 +1,23 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { useState } from 'react';
 import { Disclosure, Menu } from '@headlessui/react';
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import {
+  BellIcon,
+  MenuIcon,
+  XIcon,
+  CodeIcon,
+  CogIcon,
+  BookOpenIcon,
+  MailIcon,
+} from '@heroicons/react/outline';
 import { useLocation } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import profile_img from '../assets/profile_img.png';
 
 const navigation = [
-  { name: 'Works', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Works', href: '/', icon: <CodeIcon /> },
+  { name: 'About', href: '/about', icon: <BookOpenIcon /> },
+  { name: 'Contact', href: '/contact', icon: <MailIcon /> },
 ];
 
 function classNames(...classes) {
@@ -73,13 +81,16 @@ export default function Navbar() {
                             isActiveRoute
                               ? 'bg-gray-900 text-white'
                               : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                            'px-3 py-2 rounded-md text-sm font-medium'
+                            'px-3 py-2 rounded-md text-sm font-medium flex flex-row items-center gap-2'
                           )}
                           aria-current={
                             isActiveRoute ? 'page' : undefined
                           }
                         >
-                          {item.name}
+                          <div style={{ width: '1rem' }}>
+                            {item.icon}
+                          </div>
+                          <span>{item.name}</span>
                         </a>
                       );
                     })}
