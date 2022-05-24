@@ -1,7 +1,9 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useState } from 'react';
 import { Popover, Menu, Transition } from '@headlessui/react';
+import { useLocation } from 'react-router-dom';
 
+import images from '../constants/images';
 import {
   MenuIcon,
   XIcon,
@@ -9,9 +11,6 @@ import {
   BookOpenIcon,
   MailIcon,
 } from '@heroicons/react/outline';
-import { useLocation } from 'react-router-dom';
-import logo from '../assets/logo.svg';
-import profile_img from '../assets/profile_img.png';
 
 const navigation = [
   { name: 'Works', href: '/', icon: <CodeIcon /> },
@@ -63,7 +62,7 @@ export default function Navbar() {
                 <div className='flex-shrink-0 flex items-center'>
                   <img
                     className='block h-8 w-auto'
-                    src={logo}
+                    src={images.logo}
                     alt='logo'
                   />
                 </div>
@@ -113,7 +112,7 @@ export default function Navbar() {
                       <span className='sr-only'>Open user menu</span>
                       <img
                         className='h-8 w-8 rounded-full'
-                        src={profile_img}
+                        src={images.profile_img}
                         alt=''
                       />
                     </Menu.Button>
