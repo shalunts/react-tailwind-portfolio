@@ -5,8 +5,7 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import { Navbar, Footer } from './components';
 import { Works, About, Contact, NotFound } from './pages';
 
 const App = () => {
