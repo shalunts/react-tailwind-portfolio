@@ -6,17 +6,25 @@ import {
 } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
-import { Works, About, Contact } from './pages';
+import Footer from './components/Footer';
+import { Works, About, Contact, NotFound } from './pages';
 
 const App = () => {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Works />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
-      </Routes>
+      <div className='flex flex-col h-screen justify-between'>
+        <Navbar />
+        <main className='container mx-auto px-3 pb-12'>
+          <Routes>
+            <Route path='/' element={<Works />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/notfound' element={<NotFound />} />
+            <Route path='/*' element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 };

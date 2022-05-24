@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import {
   MenuIcon,
@@ -98,7 +98,7 @@ export default function Navbar() {
               <div className='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
                 <span
                   style={{ fontSize: '1.5em' }}
-                  class={sayHi ? 'wave' : ''}
+                  className={sayHi ? 'wave' : ''}
                 >
                   👋
                 </span>
@@ -142,7 +142,6 @@ export default function Navbar() {
                     aria-current={isActiveRoute ? 'page' : undefined}
                   >
                     <div style={{ width: '1rem' }}>{item.icon}</div>
-
                     {item.name}
                   </Disclosure.Button>
                 );
