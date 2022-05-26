@@ -13,7 +13,7 @@ import {
 } from '@heroicons/react/outline';
 
 const navigation = [
-  { name: 'Works', href: '/', icon: <CodeIcon /> },
+  { name: 'Projects', href: '/', icon: <CodeIcon /> },
   { name: 'About', href: '/about', icon: <BookOpenIcon /> },
   { name: 'Contact', href: '/contact', icon: <MailIcon /> },
 ];

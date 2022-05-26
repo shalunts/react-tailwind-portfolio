@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import { Navbar, Footer } from './components';
-import { Works, About, Contact, NotFound } from './pages';
+import { Projects, About, Contact, NotFound } from './pages';
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
         <Navbar />
         <main className='container mx-auto max-w-7xl'>
           <Routes>
-            <Route path='/' element={<Works />} />
+            <Route path='/' element={<Projects />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/notfound' element={<NotFound />} />
