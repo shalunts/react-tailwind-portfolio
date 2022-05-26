@@ -30,11 +30,11 @@ const Works = () => {
             btnCodeURL={data.btnCodeURL}
           />
         </div>
-        <div className='thumbnail'>
-          <img className=' z-10' src={FeatureThumb} alt='Thumbnail' />
-          <div className='shapeBox absolute top-0'>
+        <div className='thumbnail relative'>
+          <img className='z-10' src={FeatureThumb} alt='Thumbnail' />
+          {/* <div className='shapeBox absolute top-0 -right-200 -z-20'>
             <img src={shapePattern} alt='Shape' />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
