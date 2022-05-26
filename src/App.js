@@ -13,7 +13,7 @@ const App = () => {
     <Router>
       <div className='flex flex-col h-screen justify-between'>
         <Navbar />
-        <main className='container mx-auto px-3 pb-12'>
+        <main className='container mx-auto max-w-7xl'>
           <Routes>
             <Route path='/' element={<Works />} />
             <Route path='/about' element={<About />} />
