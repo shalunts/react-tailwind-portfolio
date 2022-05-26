@@ -2,9 +2,10 @@ import React from 'react';
 import ProjectScreenshot from '../assets/project_screenshot_02.jpg';
 import shapePattern from '../assets/shape-pattern2.png';
 
-import { QrcodeIcon, HashtagIcon } from '@heroicons/react/solid';
+import { QrcodeIcon } from '@heroicons/react/solid';
 
 export default function Project({
+  id,
   subTitle = [],
   title,
   description,
@@ -13,10 +14,15 @@ export default function Project({
   btnCode,
   btnCodeURL = '#',
 }) {
+  console.log(id);
   return (
     <div className='project max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between'>
       {/* Text area  */}
-      <div className='mb-7 md-mb-0 md:px-5'>
+      <div
+        className={`mb-7 md-mb-0 md:px-5 ${
+          id % 2 === 0 ? 'order-last' : 'order-first'
+        }`}
+      >
         <div className='flex flex-row '>
           {subTitle.map((item, i) => (
             <p className='bg-gray-700 text-white px-3 py-1 rounded-xl text-sm font-medium items-center mr-2'>

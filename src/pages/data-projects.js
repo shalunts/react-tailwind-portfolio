@@ -1,6 +1,6 @@
 const data = [
   {
-    id: '01',
+    id: 1,
     subTitle: [
       'react',
       'tailwind.css',
@@ -16,7 +16,7 @@ const data = [
     btnCodeURL: 'https://github.com/shalunts/gooygle',
   },
   {
-    id: '02',
+    id: 2,
     subTitle: [
       'react',
       'tailwind.css',
