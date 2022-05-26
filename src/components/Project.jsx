@@ -1,10 +1,7 @@
 import React from 'react';
-import ProjectScreenshot from '../assets/project_screenshot_02.jpg';
-import shapePattern from '../assets/shape-pattern2.png';
 
 import { QrcodeIcon } from '@heroicons/react/solid';
-
-export default function Project({
+function Project({
   id,
   subTitle = [],
   title,
@@ -13,10 +10,10 @@ export default function Project({
   btnLivePreviewURL = '#',
   btnCode,
   btnCodeURL = '#',
+  screenShot,
 }) {
-  console.log(id);
   return (
-    <div className='project max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between'>
+    <div className='project max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between gap-10'>
       {/* Text area  */}
       <div
         className={`mb-7 md-mb-0 md:px-5 ${
@@ -26,7 +23,7 @@ export default function Project({
         <div className='flex flex-row '>
           {subTitle.map((item, i) => (
             <p className='bg-gray-700 text-white px-3 py-1 rounded-xl text-sm font-medium items-center mr-2'>
-              # {item}
+              #{item}
             </p>
           ))}
         </div>
@@ -73,15 +70,15 @@ export default function Project({
       </div>
       {/* Image area  */}
       <div className='thumbnail relative'>
+        <img src='./assets/' alt='' />
         <img
           className='z-10 drop-shadow-2xl rounded-lg'
-          src={ProjectScreenshot}
-          alt='Thumbnail'
+          src={screenShot}
+          alt='Screenshot'
         />
-        {/* <div className='shapeBox absolute top-0 -right-200 -z-20'>
-            <img src={shapePattern} alt='Shape' />
-          </div> */}
       </div>
     </div>
   );
 }
+
+export default Project;

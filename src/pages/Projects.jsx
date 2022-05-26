@@ -5,9 +5,9 @@ import data from './data-projects';
 const Projects = () => {
   return (
     <section className='projects-section '>
-      {data.map((project) => (
+      {data.map((project, index) => (
         <Project
-          key={project.id}
+          key={index}
           id={project.id}
           subTitle={project.subTitle}
           title={project.title}
@@ -16,6 +16,7 @@ const Projects = () => {
           btnLivePreviewURL={project.btnLivePreviewURL}
           btnCode={project.btnCode}
           btnCodeURL={project.btnCodeURL}
+          screenShot={project.screenShot}
         />
       ))}
     </section>
