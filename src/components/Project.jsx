@@ -17,7 +17,7 @@ function Project({
       {/* Text area  */}
       <div
         className={`mb-7 md-mb-0 md:px-5 ${
-          id % 2 === 0 ? 'order-last' : 'order-first'
+          id % 2 === 0 ? 'md:order-last' : 'md:order-first'
         }`}
       >
         <div className='flex flex-row '>
@@ -28,7 +28,7 @@ function Project({
           ))}
         </div>
 
-        <h3 className='text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
+        <h3 className='pt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
           <span className='block text-indigo-600'>{title}</span>
         </h3>
 
