@@ -6,7 +6,7 @@ import { ArrowCircleDownIcon } from '@heroicons/react/solid';
 
 const Projects = () => {
   return (
-    <section className='container mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
+    <section>
       <div className='section-header'>
         <h2 className='text-3xl mb-2 mt-4 font-semibold leading-normal'>
           Welcome!

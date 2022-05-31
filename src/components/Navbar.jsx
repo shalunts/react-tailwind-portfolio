@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useState } from 'react';
 import { Popover, Menu, Transition } from '@headlessui/react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import images from '../constants/images';
 import {
@@ -13,9 +13,9 @@ import {
 } from '@heroicons/react/outline';
 
 const navigation = [
-  { name: 'Projects', href: '/', icon: <CodeIcon /> },
-  { name: 'About', href: '/about', icon: <BookOpenIcon /> },
-  { name: 'Contact', href: '/contact', icon: <MailIcon /> },
+  { name: 'Projects', path: '/', icon: <CodeIcon /> },
+  { name: 'Skills', path: '/skills', icon: <BookOpenIcon /> },
+  { name: 'Contact', path: '/contact', icon: <MailIcon /> },
 ];
 
 function classNames(...classes) {
@@ -39,7 +39,7 @@ export default function Navbar() {
     <Popover as='nav' className='bg-gray-800'>
       {({ open }) => (
         <>
-          <div className='container max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
+          <div className='container max-w-7xl mx-auto px-2 sm:px-6 lg:px-0'>
             <div className='relative flex items-center justify-between h-16'>
               <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
                 {/* Mobile menu button*/}
@@ -70,11 +70,11 @@ export default function Navbar() {
                   <div className='flex space-x-4'>
                     {navigation.map((item) => {
                       const isActiveRoute =
-                        location.pathname === item.href;
+                        location.pathname === item.path;
                       return (
-                        <a
+                        <Link
                           key={item.name}
-                          href={item.href}
+                          to={item.path}
                           className={classNames(
                             isActiveRoute
                               ? 'bg-gray-900 text-white'
@@ -89,7 +89,7 @@ export default function Navbar() {
                             {item.icon}
                           </div>
                           <span>{item.name}</span>
-                        </a>
+                        </Link>
                       );
                     })}
                   </div>
@@ -139,13 +139,13 @@ export default function Navbar() {
               <div className='px-2 pt-2 pb-3 space-y-1'>
                 {navigation.map((item) => {
                   const isActiveRoute =
-                    location.pathname === item.href;
+                    location.pathname === item.path;
 
                   return (
                     <Popover.Button
                       key={item.name}
-                      as='a'
-                      href={item.href}
+                      as={Link}
+                      to={item.path}
                       className={classNames(
                         isActiveRoute
                           ? 'bg-gray-900 text-white'
